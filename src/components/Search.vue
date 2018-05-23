@@ -5,10 +5,15 @@
     <form v-on:submit.prevent="getResult(query)">
     <input type="text" placeholder="Type in your search query" v-model="query"> </input>
     </form>
-<div v-if="results" class="results">
+  <div v-if="results" class="results">
     <div v-for="result in results">
       <img v-bind:src="result.links[0].href">
     </div>
+  </div>
+
+  <div v-else-if="results && results.length === 0" class="no-results">
+    <h2>No Images Found</h2>
+      <p>Please adjust your search to find more words.</p>
   </div>
 </div>
 </template>
