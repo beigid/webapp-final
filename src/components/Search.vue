@@ -12,7 +12,7 @@
   </div>
 
     <div v-else-if="results && results.length === 0" class="no-results">
-      <h2>No Words Found</h2>
+      <h2>No Images Found</h2>
       <p>Please adjust your search to find more words.</p>
     </div>
     
@@ -45,6 +45,8 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+  color: white;
+  text-shadow: 2px 2px black;
 }
 ul {
   list-style-type: none;
@@ -55,7 +57,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: white;
 }
 
 .results img{
