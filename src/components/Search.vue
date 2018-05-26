@@ -64,4 +64,13 @@ a {
   height: 300px;
   margin: 15px;
 }
+
+p {
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+input {
+  width:300px;
+}
 </style>
