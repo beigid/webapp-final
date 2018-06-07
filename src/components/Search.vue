@@ -5,6 +5,9 @@
     <form v-on:submit.prevent="getResult(query)">
     <input type="text" placeholder="Type in your search query" v-model="query"> </input>
     </form>
+  <div class="results-container">
+  <spinner v-if="showSpinner"></spinner>
+
   <div v-if="results && results.length > 0" class="results">
     <div v-for="result in results">
       <img v-bind:src="result.links[0].href">
@@ -17,24 +20,34 @@
     </div>
     
 </div>
+</div>
 </template>
 
 <script>
 import axios from 'axios';
+require('vue2-animate/dist/vue2-animate.min.css');
+import CubeSpinner from '@/components/CubeSpinner';
+
 export default {
   name: 'Search',
+  components: {
+    spinner: CubeSpinner
+  },
   data () {
     return {
       msg: 'Search',
       query: '',
-      results: ''
+      results: '',
+      showSpinner: false
     }
   },
   methods: {
     getResult(query) {
+      this.showSpinner = true;
       axios.get('https://images-api.nasa.gov/search?q=' + query + '&media_type=image').then(response => {
         console.log(response.data.collection.items);
         this.results = response.data.collection.items;
+        this.showSpinner = false;
       });
     }
   }
