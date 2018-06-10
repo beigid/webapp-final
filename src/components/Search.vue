@@ -1,5 +1,10 @@
 <template>
   <div class="search">
+  <p>
+    <router-link to="/About">Go to About</router-link>
+ <router-link to="/Contact">Go to Contact</router-link>
+    <router-view></router-view>
+  </p>
   <h1> Welcome to the NASA API </h1>
   <h2> What would you like to see? </h2>
     <form v-on:submit.prevent="getResult(query)">
