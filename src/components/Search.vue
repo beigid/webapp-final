@@ -2,8 +2,8 @@
   <div class="search">
   <h1> Welcome to the NASA API </h1>
   <p>
-    <router-link to="/About">Go to About</router-link>
- <router-link to="/Contact">Go to Contact</router-link>
+    
+    <router-link to="/about">Go to About</router-link>
     <router-view></router-view>
   </p>
   <h2> What would you like to see? </h2>

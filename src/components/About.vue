@@ -1,24 +1,29 @@
 <template>
   <div class="about">
-  <h1> Welcome to the NASA About Page </h1>
-  <h2> What would you like to see? </h2>
-    <form v-on:submit.prevent="getResult(query)">
-    <input type="text" placeholder="Type in your search query" v-model="query"> </input>
-    </form>
-  <div class="results-container">
-  <spinner v-if="showSpinner"></spinner>
-
-  <div v-if="results && results.length > 0" class="results">
-    <div v-for="result in results">
-      <img v-bind:src="result.links[0].href">
-    </div>
-  </div>
-
-    <div v-else-if="results && results.length === 0" class="no-results">
-      <h2>No Images Found</h2>
-      <p>Please adjust your search to find more words.</p>
-    </div>
+  <h1> About Page </h1>
+ <p>
+ 
+    </p>
+    <p>
+    The NASA API is here to supply you with all the images you love about space and time! This page pulls in the API data from the NASA website and allows search results to be generated right onto the page.
+    </p>
+    <p>
+    Check out the  <router-link to="/">search</router-link>
+  <router-view></router-view>  page to type in your favorite space query to see your results generate!
+    </p>
     
-</div>
+
 </div>
 </template>
+
+<style scoped>
+h1 {
+  color: black;
+  text-shadow: 2px 2px white;
+}
+
+p {
+  color: white;
+}
+
+</style>
